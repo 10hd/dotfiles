@@ -1,3 +1,8 @@
+-- theme
+vim.cmd.colorscheme("lunaperche")
+local dull_grey = "#4D4D4D"
+vim.api.nvim_set_hl(0, "Comment", { fg = dull_grey })
+
 -- disable mouse
 vim.opt.mouse = ""
 
@@ -60,16 +65,7 @@ vim.keymap.set('i', '{', pair('{', '}'), { expr = true })
 vim.keymap.set('i', '"', pair('"', '"'), { expr = true })
 vim.keymap.set('i', "'", pair("'", "'"), { expr = true })
 
--- navigation
-vim.keymap.set('n', '<C-Left>', '<C-w>h')
-vim.keymap.set('n', '<C-Down>',  '<C-w>j')
-vim.keymap.set('n', '<C-Up>',    '<C-w>k')
-vim.keymap.set('n', '<C-Right>', '<C-w>l')
-
---
 -- custom snippets
---
-
 local snippet_group = vim.api.nvim_create_augroup("UserSnippets", { clear = true })
 
 -- html
