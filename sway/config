@@ -25,7 +25,7 @@ floating_modifier $mod normal
 
 bindsym $mod+Shift+c reload
 
-bindsym $mod+x exec swaynag 
+bindsym $mod+x exec swaymsg exit
 
 bindsym ctrl+shift+s exec grim -g "$(slurp)" - | wl-copy
 
