@@ -1,7 +1,7 @@
 set $mod Mod4
 
 set $term ghostty
-set $menu wofi --show drun
+set $menu wofi --show drun --style /home/leon/.config/wofi/stylesheet.css
 
 output * bg /home/leon/Wallpapers/Cape-Flattery.jpg fill
 
