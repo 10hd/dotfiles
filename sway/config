@@ -91,7 +91,7 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 bar {
 position top
-status_command while date +"Battery: $(cat /sys/class/power_supply/BAT0/capacity)%%  %Y-%m-%d %H:%M:%S"; do sleep 1; done
+status_command /home/leon/.local/bin/swaystatus
 }
 
 include /etc/sway/config.d/*
