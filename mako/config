@@ -1,0 +1,10 @@
+background-color=#1a1a1a
+text-color=#ffffff
+border-size=2
+border-color=#c18ee3
+progress-color=#c18ee3
+padding=5
+margin=10
+anchor=top-right
+default-timeout=3000
+ignore-timeout=0
