@@ -6,6 +6,7 @@ wifi="unknown"
 battery="unknown"
 disk="unknown"
 ram="unknown"
+bluetooth="unknown"
 
 while true; do
 current_time=$(date +'%Y-%m-%d %H:%M:%S')
@@ -14,6 +15,13 @@ volume=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{if ($3 == "[MUTED]") prin
 
 if [ $((counter % 5)) -eq 0 ]; then
     battery=$(acpi -b | sed -E 's/Battery [0-9]+: //; s/, remaining//; s/, until charged//' | sed -E 's/,/:/; s/,/   /')
+
+    bt_name=$(bluetoothctl devices Connected | awk '{$1=$2=""; print substr($0,3)}')
+    if [ -z "$bt_name" ]; then
+            bluetooth="Disconnected"
+    else
+            bluetooth="$bt_name"
+    fi
 fi
 
 if [ $((counter % 25)) -eq 0 ]; then
@@ -27,7 +35,7 @@ act=$(cat /sys/class/drm/card1/gt_act_freq_mhz 2>/dev/null || echo 0)
 max=$(cat /sys/class/drm/card1/gt_max_freq_mhz 2>/dev/null || echo 1)
 gpu=$((act * 100 / max))%
 
-echo "CPU: $cpu    GPU: $gpu    Wifi: $wifi    Mem: $ram    $disk    Vol: $volume    $battery    $current_time"
+echo "CPU: $cpu    GPU: $gpu    Wifi: $wifi    BT: $bluetooth    Mem: $ram    $disk    Vol: $volume    $battery    $current_time"
 
 counter=$((counter + 1))
 sleep 0.1
