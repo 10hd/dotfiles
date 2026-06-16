@@ -9,3 +9,11 @@ window {
     border-radius: 0;
     color: white;
 }
+
+#entry {
+    color: white;
+}
+
+#entry:selected {
+    background-color: #c18ee3;
+}

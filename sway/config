@@ -12,6 +12,8 @@ smart_borders on
 #gaps inner 8
 #gaps outer 6
 
+client.focused #c18ee3 #875f87 #ffffff #cba6f7 #c18ee3
+
 default_border pixel 2
 default_floating_border pixel 2
 
@@ -92,6 +94,10 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 bar {
 position top
 status_command /home/leon/.local/bin/swaystatus
+colors {
+focused_workspace  #1a1a1a  #1a1a1a  #ffffff
+inactive_workspace #11111b #11111b #6c7086
+}
 }
 
 include /etc/sway/config.d/*
