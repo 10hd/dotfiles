@@ -104,3 +104,5 @@ inactive_workspace #11111b #11111b #6c7086
 }
 
 include /etc/sway/config.d/*
+
+exec gammastep
