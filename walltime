@@ -1,0 +1,14 @@
+#!/bin/bash
+
+LIGHT_WP="/home/leon/Wallpapers/Cape-Flattery.jpg"
+DARK_WP="/home/leon/Wallpapers/Cape-Flattery-Night.jpg"
+
+CURRENT_HOUR=$(date +%H)
+
+pkill swaybg
+
+if [ "$CURRENT_HOUR" -ge 20 ] || [ "$CURRENT_HOUR" -lt 6 ]; then
+    swaybg -i "$DARK_WP" -m fill &
+else
+    swaybg -i "$LIGHT_WP" -m fill &
+fi
